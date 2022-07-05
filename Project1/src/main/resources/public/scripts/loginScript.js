@@ -1,4 +1,5 @@
 let baseUrl = "http://localhost:8080";
+document.getElementById("login").addEventListener("click",login, false);
 
 async function login(){
     let uname = document.getElementById('uname').value;
@@ -22,8 +23,16 @@ async function login(){
 
     let resJSON = await res.json()
     .then((resp) => {
-        console.log(resp);
-        window.location.assign("homePage.html");
+        window.sessionStorage.clear();
+        if(res.status == 200){
+            window.sessionStorage.setItem('username', resp.username);
+            window.sessionStorage.setItem('id', resp.id);
+            window.sessionStorage.setItem('reimbursement', resp.availableReimbursement);
+            window.sessionStorage.setItem('type', resp.type)
+            window.location.assign("homePage.html");
+        }else{
+            alert("Invalid username or password");
+        }
     })
     .catch((err) => {
         console.log(err);

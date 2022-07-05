@@ -1,23 +1,20 @@
 package dev.blackmon;
 
 import dev.blackmon.pages.LoginPage;
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.runner.RunWith;
+import io.cucumber.java.AfterAll;
+import io.cucumber.java.BeforeAll;
+import org.junit.platform.suite.api.Suite;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.File;
 
-@RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources", glue = "dev.blackmon.steps")
+@Suite
 public class loginRunner {
     public static WebDriver driver;
     public static LoginPage loginPage;
 
-    @BeforeClass
+    @BeforeAll
     public static void setup() {
         File chrome = new File("src/test/resources/chromedriver.exe");
         System.setProperty("webdriver.chrome.driver", chrome.getAbsolutePath());
@@ -25,7 +22,7 @@ public class loginRunner {
         loginPage = new LoginPage(driver);
     }
 
-    @AfterClass
+    @AfterAll
     public static void teardown() {
         driver.quit();
     }

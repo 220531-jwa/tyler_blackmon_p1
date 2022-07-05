@@ -8,25 +8,22 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="styles.css" rel="stylesheet">
 </head>
-<body>
-
+<body onload="getRequests()">
 <div class="container-fluid">
     <div class="row">
-        <h1>Welcome: random</h1>
+        <h1 id="welcome-message"></h1>
     </div>
     <div class="row">
         <div class="col">
-            <h2>Name</h2>
-        </div>
-        <div class="col">
-            <h2>Available Reimbursement:</h2>
+            <h2 id="reimbursement"></h2>
         </div>
     </div>
-    <div class="row" id="requests">
-        <table class="table">
+    <div class="row">
+        <table class="table table-dark" style="background-color: black;" id="requests">
             <thead>
-            <tr>
+            <tr id="table-top-row">
                 <th scope="col">#</th>
                 <th scope="col">Status</th>
                 <th scope="col">Amount</th>
@@ -36,9 +33,9 @@
     </div>
 </div>
 <div>
-    <button class="btn btn-primary">New Request</button>
+    <button class="btn btn-primary" id="createRequest">New Request</button>
 </div>
-
+<script src="homePageScript.js"></script>
 
 <!-- Bootstrap JS and Popper -->
 <!-- JavaScript Bundle with Popper -->

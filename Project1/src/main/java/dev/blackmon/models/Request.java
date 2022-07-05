@@ -17,11 +17,15 @@ public class Request {
     private LocalTime eventTime;
     private String description;
 
+    private boolean denied;
+
+    private String grade;
+
     public Request() {
         super();
     }
 
-    public Request(int id, int requesterId, int fmId, BigDecimal amount, ReimbursementType type, boolean approved, LocalDate eventDate, LocalTime eventTime, String description) {
+    public Request(int id, int requesterId, int fmId, BigDecimal amount, ReimbursementType type, boolean approved, LocalDate eventDate, LocalTime eventTime, String description, boolean denied, String grade) {
         this.id = id;
         this.requesterId = requesterId;
         this.fmId = fmId;
@@ -31,6 +35,8 @@ public class Request {
         this.eventDate = eventDate;
         this.eventTime = eventTime;
         this.description = description;
+        this.denied = denied;
+        this.grade = grade;
     }
 
     public BigDecimal getAmount() {
@@ -103,5 +109,21 @@ public class Request {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public boolean isDenied() {
+        return denied;
+    }
+
+    public void setDenied(boolean denied) {
+        this.denied = denied;
+    }
+
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
     }
 }

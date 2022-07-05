@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+    <br/>
+    <label>
+        Financial Manager Id
+        <input class="form-controller" type="number" id="fmId">
+    </label>
+    <br/>
+    <label>
+        Amount
+        <input class="form-controller" type="number" id="amount">
+    </label>
+    <br/>
+    <label>
+        Type
+        <select id="type">
+            <option value="">--Please choose an option--</option>
+            <option value="UNIVERSITY_COURSES">University Courses</option>
+            <option value="SEMINARS">Seminars</option>
+            <option value="CERTIFICATION_PREPERATION">Certification Prep</option>
+            <option value="CERTIFICATION">Certification</option>
+            <option value="TECHNICAL_TRAINING">Technical Training</option>
+            <option value="OTHER">Other</option>
+        </select>
+    </label>
+    <br/>
+    <label>
+        Date
+        <input class="form-controller" type="date" id="date">
+    </label>
+    <br/>
+    <label>
+        Time
+        <input class="form-controller" type="time" id="time">
+    </label>
+    <br/>
+    <label>
+        Description
+        <input class="form-controller" type="text" id="description">
+    </label>
+</div>
+<div>
+    <button class="btn btn-primary" id="submitButton" href="homePage.html">Submit</button>
+</div>
+<script src="submitRequestForm.js"></script>
+</body>
+</html>
